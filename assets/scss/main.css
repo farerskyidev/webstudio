@@ -1,0 +1,26 @@
+body {
+  /* background-color: blue; */
+}
+
+.menu {
+  list-style-type: none;
+  gap: 50px;
+  display: flex;
+}
+.menu li a {
+  text-decoration: none;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+}
+header > div {
+  display: flex;
+  align-items: center;
+}
+
+.gap-50 {
+  -moz-column-gap: 50px;
+       column-gap: 50px;
+}/*# sourceMappingURL=main.css.map */
