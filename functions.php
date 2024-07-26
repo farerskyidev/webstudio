@@ -89,6 +89,9 @@ function ristars_scripts() {
 add_action( 'wp_enqueue_scripts', 'ristars_scripts' );
 
 
+
+
+
 function load_resources_posts() {
     $query_args = array(
         'post_type' => 'post',
@@ -115,6 +118,7 @@ function load_resources_posts() {
                 }
                 echo '</div>';
             }
+
             
             ?>
         <?php endwhile;

@@ -6,7 +6,11 @@ body {
     list-style-type: none;
     gap: 50px;
     display: flex;
+<<<<<<< HEAD
     li { 
+=======
+    li {
+>>>>>>> d197c3cc9b3811d6a91eb48842dc454deebc4e5a
         a {
             text-decoration: none;
             color: #212121;
@@ -85,10 +89,13 @@ body {
     margin-bottom: 20px;
 }
 
+<<<<<<< HEAD
 .mb-30 {
     margin-bottom: 30px; 
 }
 
+=======
+>>>>>>> d197c3cc9b3811d6a91eb48842dc454deebc4e5a
 .main-content {
     padding: 100px 0 95px;
 }
@@ -101,6 +108,7 @@ body {
     padding: 50px 0;
 }
 
+<<<<<<< HEAD
 .single-post {
     &__image { 
         margin-bottom: 50px;
@@ -153,3 +161,5 @@ body {
         }
     }
 }
+=======
+>>>>>>> d197c3cc9b3811d6a91eb48842dc454deebc4e5a

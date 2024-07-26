@@ -42,7 +42,11 @@ $phone = get_field('phone', 'option');
 					<?php
 					wp_nav_menu(
 						array(
+<<<<<<< HEAD
 							'theme_location' => 'menu-1', 
+=======
+							'theme_location' => 'menu-1',
+>>>>>>> d197c3cc9b3811d6a91eb48842dc454deebc4e5a
 							'menu_id'        => 'menu', 
 						)
 					);
