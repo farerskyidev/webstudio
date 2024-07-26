@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 jQuery(document).ready(function($) {
     
     var page_resources = 1;
@@ -44,7 +44,7 @@ jQuery(document).ready(function($) {
     console.log('maks'); 
 });
 
-=======
+
 /**
  * File navigation.js.
  *
@@ -146,4 +146,4 @@ jQuery(document).ready(function($) {
 }() );
 
 $(document).foundation();
->>>>>>> d197c3cc9b3811d6a91eb48842dc454deebc4e5a
+

@@ -93,6 +93,5 @@ $projects_query = new WP_Query($args);
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script> 
 
-
 <?php
 get_footer();

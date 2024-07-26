@@ -108,17 +108,6 @@ function load_resources_posts() {
         while ($projects_query->have_posts()):
             $projects_query->the_post();
             the_title();
-
-            
-            $categories = get_the_category();
-            if (!empty($categories)) {
-                echo '<div class="post-categories">';
-                foreach ($categories as $category) {
-                    echo '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="category-link sonic-silver-color">' . esc_html($category->name) . '</a> ';
-                }
-                echo '</div>';
-            }
-
             
             ?>
         <?php endwhile;

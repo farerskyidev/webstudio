@@ -8,10 +8,9 @@
  */
 
 get_header();
-<<<<<<< HEAD
+
 $custom_image = get_field('custom_image');
-=======
->>>>>>> d197c3cc9b3811d6a91eb48842dc454deebc4e5a
+
 ?>
 
 <main class="main-content">
@@ -21,7 +20,7 @@ $custom_image = get_field('custom_image');
 				<?php while ( have_posts() ) : the_post(); ?>
 					<article id="post-<?php the_ID(); ?>" <?php post_class('entry'); ?>>
 						<h1 class="page-title entry__title"><?php the_title(); ?></h1>
-<<<<<<< HEAD
+
 						<div class='single-post__image'>
 						<?php
 							if ( $custom_image ) : 
@@ -29,15 +28,14 @@ $custom_image = get_field('custom_image');
 							endif;
 						?>
 						</div>
-=======
+
 						<?php if ( has_post_thumbnail() ) : ?>
 							<div title="<?php the_title_attribute(); ?>" class="entry__thumb">
 								<?php the_post_thumbnail( 'large' ); ?>
 							</div>
 						<?php endif; ?>
->>>>>>> d197c3cc9b3811d6a91eb48842dc454deebc4e5a
 						<div class="entry__content clearfix">
-							<?php the_content( '', true ); ?>
+							<?php the_content( '', true ); ?> 
 						</div>
 					</article>
 				<?php endwhile; ?>

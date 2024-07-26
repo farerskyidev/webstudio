@@ -25,12 +25,9 @@ body {
 .header__wrapper > div {
   display: flex;
   align-items: center;
-<<<<<<< HEAD
   > div:first-child {
     margin-right: 95px;
   }
-=======
->>>>>>> d197c3cc9b3811d6a91eb48842dc454deebc4e5a
 }
 .header__info a {
   color: #757575;
@@ -81,13 +78,10 @@ body {
   margin-bottom: 20px;
 }
 
-<<<<<<< HEAD
 .mb-30 {
   margin-bottom: 30px;
 }
 
-=======
->>>>>>> d197c3cc9b3811d6a91eb48842dc454deebc4e5a
 .main-content {
   padding: 100px 0 95px;
 }
@@ -100,7 +94,6 @@ body {
   padding: 50px 0;
 }
 
-<<<<<<< HEAD
 .single-post__image {
   margin-bottom: 50px;
 }
@@ -151,6 +144,4 @@ body {
   cursor: pointer;
 }
 
-=======
->>>>>>> d197c3cc9b3811d6a91eb48842dc454deebc4e5a
 /*# sourceMappingURL=main.css.map */
