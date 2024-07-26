@@ -17,9 +17,9 @@ get_header();
 
 	<main id="primary" class="site-main">
 		<div class="grid-container">
-			<div class="grid-x grid-margin-x">
-				<?php the_content(); ?>
-			</div>
+			
+			<?php the_content(); ?>
+			
 		</div>
 	</main>
 

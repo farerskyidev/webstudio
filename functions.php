@@ -73,15 +73,59 @@ function ristars_scripts() {
     wp_enqueue_script('isotope', 'https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js', array('jquery'), null, true);
 
 
-    wp_enqueue_script( 'ristars-navigation', get_template_directory_uri() . '/js/navigation.js', array('jquery'), null, true );
+    wp_enqueue_script( 'ristars_scripts', get_template_directory_uri() . '/js/navigation.js', array('jquery'), null, true );
     wp_enqueue_script('foundation-js', get_template_directory_uri() . '/js/foundation.min.js', array('jquery'), null, true);
     wp_add_inline_script('foundation-js', 'jQuery(document).ready(function($) { $(document).foundation(); });');
     if ( is_singular() && comments_open() && get_option( 'thread_comments' ) ) {  
         wp_enqueue_script( 'comment-reply' );
     }
 
+    wp_localize_script( 'ristars_scripts', 'lex_object', array(
+        'ajax_url' => admin_url( 'admin-ajax.php' ),
+        'site_url' => site_url('/')
+    ) );
+
 }
 add_action( 'wp_enqueue_scripts', 'ristars_scripts' );
+
+
+function load_resources_posts() {
+    $query_args = array(
+        'post_type' => 'post',
+        'post_status' => 'publish',
+        'posts_per_page' => -1,
+        'paged' => isset($_GET['page']) ? intval($_GET['page']) : 1,
+        'orderby' => 'title',
+    );
+
+    $projects_query = new WP_Query($query_args);
+
+    if ( $projects_query->have_posts() ) {
+
+        while ($projects_query->have_posts()):
+            $projects_query->the_post();
+            the_title();
+
+            
+            $categories = get_the_category();
+            if (!empty($categories)) {
+                echo '<div class="post-categories">';
+                foreach ($categories as $category) {
+                    echo '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="category-link sonic-silver-color">' . esc_html($category->name) . '</a> ';
+                }
+                echo '</div>';
+            }
+            
+            ?>
+        <?php endwhile;
+        wp_reset_postdata();
+
+    }
+
+    die;
+}
+add_action( 'wp_ajax_load_resources_posts', 'load_resources_posts' );
+add_action( 'wp_ajax_nopriv_load_resources_posts', 'load_resources_posts' );
 
 
 

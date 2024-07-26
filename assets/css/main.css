@@ -25,6 +25,9 @@ body {
 .header__wrapper > div {
   display: flex;
   align-items: center;
+  > div:first-child {
+    margin-right: 95px;
+  }
 }
 .header__info a {
   color: #757575;
@@ -118,6 +121,27 @@ body {
   border-bottom-color: transparent;
   border-radius: 50%;
   animation: 1s loader linear infinite;
+}
+
+#filters-all {
+  gap: 6px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 50px;
+}
+#filters-all button {
+  padding: 8px 22px;
+  background-color: #F5F4FA;
+  font-weight: 500;
+  border-radius: 4px;
+  color: #212121;
+}
+#filters-all button:focus {
+  background-color: #2196F3;
+  color: #fff;
+}
+#filters-all button:hover {
+  cursor: pointer;
 }
 
 /*# sourceMappingURL=main.css.map */

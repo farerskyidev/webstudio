@@ -132,3 +132,24 @@ body {
         animation: 1s loader linear infinite;
     }
 }
+
+#filters-all {
+    gap: 6px;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 50px;
+    button {
+        padding: 8px 22px;
+        background-color: #F5F4FA;
+        font-weight: 500;
+        border-radius: 4px;
+        color: #212121; 
+        &:focus {
+            background-color: #2196F3;
+            color: #fff;
+        }
+        &:hover {
+            cursor: pointer;
+        }
+    }
+}
