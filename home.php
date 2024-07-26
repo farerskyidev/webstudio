@@ -13,7 +13,6 @@
  */
 
 get_header();
-<<<<<<< HEAD
 
 $args = array(
     'post_type'      => 'post',
@@ -94,23 +93,6 @@ $projects_query = new WP_Query($args);
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.js"></script>
 <script src="https://unpkg.com/isotope-layout@3/dist/isotope.pkgd.min.js"></script> 
 
-=======
-?>
 
-<main class="main-content">
-    <div class="grid-container">
-        <div class="grid-x grid-margin-x">
-            <?php if ( have_posts() ) : ?>
-                <?php while ( have_posts() ) : the_post(); ?>
-                    <div class="large-4 medium-6 small-12 cell">
-                        <?php get_template_part( 'template-parts/content', 'post' ); ?>
-                    </div>
-                <?php endwhile; ?>
-            <?php endif; ?>
-        </div>
-    </div>
-</main>
-
->>>>>>> d197c3cc9b3811d6a91eb48842dc454deebc4e5a
 <?php
 get_footer();
