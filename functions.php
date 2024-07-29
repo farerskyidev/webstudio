@@ -93,32 +93,63 @@ add_action( 'wp_enqueue_scripts', 'ristars_scripts' );
 
 
 function load_resources_posts() {
+    $page = isset($_GET['page']) ? intval($_GET['page']) : 1;
+    $loaded_posts = isset($_GET['loaded_posts']) ? array_map('intval', $_GET['loaded_posts']) : array();
+
     $query_args = array(
         'post_type' => 'post',
         'post_status' => 'publish',
-        'posts_per_page' => -1,
-        'paged' => isset($_GET['page']) ? intval($_GET['page']) : 1,
+        'posts_per_page' => 9, // кількість постів на одну сторінку
+        'paged' => $page,
         'orderby' => 'title',
+        'post__not_in' => $loaded_posts, // виключити вже завантажені пости
     );
 
     $projects_query = new WP_Query($query_args);
 
-    if ( $projects_query->have_posts() ) {
-
-        while ($projects_query->have_posts()):
-            $projects_query->the_post();
-            the_title();
-            
-            ?>
-        <?php endwhile;
-        wp_reset_postdata();
-
+    if ($projects_query->have_posts()) {
+            while ($projects_query->have_posts()) : $projects_query->the_post();
+                $custom_image = get_field('custom_image');
+                $post_id = get_the_ID();
+                ?>
+                <?php $terms_2 = get_the_terms($post_id, 'category'); ?>
+                <div class="large-4 medium-6 small-12 cell mb-30 post-card-item <?php echo $terms_2[0]->slug; ?>" data-category="<?php echo $terms_2[0]->slug; ?>" data-id="<?php echo $post_id; ?>">
+                    <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                        <header class="header-post-card">
+                            <?php
+                                if ($custom_image) :
+                                    echo '<img src="' . esc_url($custom_image['url']) . '" alt="' . esc_attr($custom_image['alt']) . '" class="custom-image">';
+                                endif;
+                            ?>
+                        </header>
+                        <div class="post-card-content">
+                            <?php
+                                if (is_singular()) :
+                                    the_title('<h5 class="entry-title">', '</h5>');
+                                else :
+                                    the_title('<h5 class="post-card-title"><a href="' . esc_url(get_permalink()) . '" rel="bookmark">', '</a></h5>');
+                                endif;
+                            ?>
+                            <?php
+                            $categories = get_the_category();
+                            if (!empty($categories)) {
+                                echo '<div class="post-categories">';
+                                foreach ($categories as $category) {
+                                    echo '<a href="' . esc_url(get_category_link($category->term_id)) . '" class="category-link sonic-silver-color">' . esc_html($category->name) . '</a> ';
+                                }
+                                echo '</div>';
+                            }
+                            ?>
+                        </div>
+                    </article>
+                </div>
+            <?php endwhile;
+            wp_reset_postdata();
     }
-
     die;
 }
-add_action( 'wp_ajax_load_resources_posts', 'load_resources_posts' );
-add_action( 'wp_ajax_nopriv_load_resources_posts', 'load_resources_posts' );
+add_action('wp_ajax_load_resources_posts', 'load_resources_posts');
+add_action('wp_ajax_nopriv_load_resources_posts', 'load_resources_posts');
 
 
 

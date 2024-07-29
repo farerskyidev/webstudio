@@ -32,7 +32,7 @@ $phone = get_field('phone', 'option');
 	<header id="masthead" class="header">
 		<div class="grid-container">
 			<div class="header__wrapper">
-				<div>
+				<div class="gap-50">
 				<?php if ( ! empty( $logo ) ): ?>
 					<div class="site-branding">
 						<a href='<?php echo get_home_url(); ?>' ><img src="<?php echo esc_url( $logo ); ?>" alt="logo"></a>	

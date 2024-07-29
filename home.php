@@ -30,7 +30,7 @@ $projects_query = new WP_Query($args);
         <?php $terms = get_terms( 'category' );
             if ( ! empty( $terms ) && ! is_wp_error( $terms ) ){
             echo '<ul id="filters-all">';
-            echo '<button class="filter-button" data-filter="*">Всі</button>';
+            echo '<button class="filter-button btn" data-filter="*">Всі</button>';
             foreach ( $terms as $term ) {
             echo '<button data-filter=".' . $term->slug . '" >' . $term->name . '</button>';
             }
@@ -85,7 +85,7 @@ $projects_query = new WP_Query($args);
     </div>
     
     <div class="text-center">
-        <button class="resources-more">Показати більше</button>
+        <button class="resources-more btn">Показати більше</button>
     </div>
 
 </main>

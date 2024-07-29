@@ -25,9 +25,6 @@ body {
 .header__wrapper > div {
   display: flex;
   align-items: center;
-  > div:first-child {
-    margin-right: 95px;
-  }
 }
 .header__info a {
   color: #757575;
@@ -141,6 +138,21 @@ body {
   color: #fff;
 }
 #filters-all button:hover {
+  cursor: pointer;
+}
+
+.btn {
+  padding: 8px 22px;
+  background-color: #F5F4FA;
+  font-weight: 500;
+  border-radius: 4px;
+  color: #212121;
+}
+.btn:focus {
+  background-color: #2196F3;
+  color: #fff;
+}
+.btn:hover {
   cursor: pointer;
 }
 
