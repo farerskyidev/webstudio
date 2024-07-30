@@ -27,11 +27,11 @@ $phone = get_field('phone', 'option');
 			<?php endif; ?>
 			<?php if( ! empty( $email ) ): ?>
 				<div class='mb-9'>
-					<a class='white-color' href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a>
+					<a class='white-color-2' href="mailto:<?php echo esc_attr($email); ?>"><?php echo esc_html($email); ?></a>
 				</div>
 			<?php endif; ?>
 			<?php if( ! empty( $phone ) ): ?>
-				<div><a class='white-color' href="tel:<?php echo esc_attr($phone); ?>"><?php echo esc_html($phone); ?></a></div>
+				<div><a class='white-color-2' href="tel:<?php echo esc_attr($phone); ?>"><?php echo esc_html($phone); ?></a></div>
 			<?php endif; ?>
 		</div>
 	</footer>

@@ -1,5 +1,8 @@
+@import "fonts";
+
+
 body {
-    /* background-color: blue; */
+    font-family: 'Roboto', sans-serif !important;
 }
 
 .menu {
@@ -22,7 +25,7 @@ body {
 .header {
     &__wrapper {
         display: flex;
-        justify-content: space-between;
+        justify-content: space-between; 
         padding: 25px 0;
         > div {
         display: flex;
@@ -33,6 +36,7 @@ body {
         a {
             color: #757575;
             font-weight: 500;
+            font-size: 14px;
         }
     }
 }
@@ -52,6 +56,7 @@ body {
         font-weight: 700;
         a {
             color: #212121;
+            line-height: 36px;
         }
     }
 }
@@ -60,12 +65,20 @@ body {
     column-gap: 50px;
 }
 
+.gap-95 {
+    column-gap: 95px;
+}
+
 .footer {
     background-color: #2F303A; 
     padding: 60px 0;
 }
 .white-color {
     color: #fff;
+}
+
+.white-color-2 {
+    color: rgba(255, 255, 255, 0.6)!important;
 }
 
 .sonic-silver-color {
@@ -139,11 +152,12 @@ body {
     justify-content: center;
     margin-bottom: 50px;
     button {
-        padding: 8px 22px;
+        padding: 6px 22px;
         background-color: #F5F4FA;
         font-weight: 500;
         border-radius: 4px;
         color: #212121; 
+        line-height: 26px;
         &:focus {
             background-color: #2196F3;
             color: #fff;
@@ -168,4 +182,5 @@ body {
         cursor: pointer;
     }
 }
+
 

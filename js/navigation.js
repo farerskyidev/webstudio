@@ -15,7 +15,7 @@ jQuery(document).ready(function($) {
             loaded_posts: loadedPosts
         };
         var wrapper = $(".all-projects-wrapper");
-        var $button = $(this); // зберігаємо посилання на кнопку
+        var $button = $(this);
         $.ajax({
             url: lex_object.ajax_url,
             type: "GET",
@@ -40,7 +40,7 @@ jQuery(document).ready(function($) {
                         layoutMode: 'fitRows'
                     });
 
-                $button.hide(); // приховуємо кнопку після завантаження даних
+                $button.hide();
             },
             error: function(xhr, status, error) {
                 console.log("Ajax error:", status, error);
@@ -53,8 +53,6 @@ jQuery(document).ready(function($) {
         var filterValue = $(this).attr('data-filter');
         $listing.isotope({ filter: filterValue });
     });
-
-    console.log('maks');
 });
 
 jQuery(document).foundation();

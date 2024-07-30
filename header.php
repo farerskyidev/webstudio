@@ -21,7 +21,6 @@ $phone = get_field('phone', 'option');
 	<link rel="profile" href="https://gmpg.org/xfn/11">
 	<link rel="profile" href="style.min.css">
 	<?php wp_head(); ?>
-	
 </head>
 
 <body <?php body_class(); ?>>
@@ -32,7 +31,7 @@ $phone = get_field('phone', 'option');
 	<header id="masthead" class="header">
 		<div class="grid-container">
 			<div class="header__wrapper">
-				<div class="gap-50">
+				<div class="gap-95">
 				<?php if ( ! empty( $logo ) ): ?>
 					<div class="site-branding">
 						<a href='<?php echo get_home_url(); ?>' ><img src="<?php echo esc_url( $logo ); ?>" alt="logo"></a>	

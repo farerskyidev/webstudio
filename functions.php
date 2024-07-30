@@ -99,10 +99,10 @@ function load_resources_posts() {
     $query_args = array(
         'post_type' => 'post',
         'post_status' => 'publish',
-        'posts_per_page' => 9, // кількість постів на одну сторінку
+        'posts_per_page' => 9,
         'paged' => $page,
         'orderby' => 'title',
-        'post__not_in' => $loaded_posts, // виключити вже завантажені пости
+        'post__not_in' => $loaded_posts,
     );
 
     $projects_query = new WP_Query($query_args);

@@ -1,5 +1,23 @@
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("../../assets/fonts/Roboto-Regular.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("../../assets/fonts/Roboto-Medium.ttf") format("opentype");
+  font-weight: 500;
+  font-style: normal;
+}
+@font-face {
+  font-family: "Roboto", sans-serif;
+  src: url("../../assets/fonts/Roboto-Bold.ttf") format("opentype");
+  font-weight: 400;
+  font-style: normal;
+}
 body {
-  /* background-color: blue; */
+  font-family: "Roboto", sans-serif !important;
 }
 
 .menu {
@@ -29,6 +47,7 @@ body {
 .header__info a {
   color: #757575;
   font-weight: 500;
+  font-size: 14px;
 }
 
 .blog .post {
@@ -44,10 +63,15 @@ body {
 }
 .post-card-title a {
   color: #212121;
+  line-height: 36px;
 }
 
 .gap-50 {
   column-gap: 50px;
+}
+
+.gap-95 {
+  column-gap: 95px;
 }
 
 .footer {
@@ -57,6 +81,10 @@ body {
 
 .white-color {
   color: #fff;
+}
+
+.white-color-2 {
+  color: rgba(255, 255, 255, 0.6) !important;
 }
 
 .sonic-silver-color {
@@ -127,11 +155,12 @@ body {
   margin-bottom: 50px;
 }
 #filters-all button {
-  padding: 8px 22px;
+  padding: 6px 22px;
   background-color: #F5F4FA;
   font-weight: 500;
   border-radius: 4px;
   color: #212121;
+  line-height: 26px;
 }
 #filters-all button:focus {
   background-color: #2196F3;
